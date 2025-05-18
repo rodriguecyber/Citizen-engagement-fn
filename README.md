@@ -233,9 +233,61 @@ Portfolio: https://rodrigue.xcooll.com
 
 This section outlines key use cases to help testers verify the core functionality of the system.
 
+ 
+###  Use Case 1: Super admin
+
+1. Login using this credential 
+
+ ```bash
+`Email`:rodrirwigara@gmail.com
+`Password`:ChangeMe123!
+```
+2. click on organization page
+3. add new organization 
+4. organization admin will use the email you used to create organization and password: `ChangeMe123!`
 
 
-###  Use Case 1: Citizen - Submit & Track Complaint
+###  Use Case 2: Organization Admin - Final Resolution
+
+1. Login as Org Admin using credential
+```bash
+`Email`:email super admin asssigned to you
+`Password`:ChangeMe123!
+```
+2. add District where organization operates
+3. Resolve org-level complaints
+4. Finalize decisions
+6. View org-wide analytics
+
+
+###  Use Case 3: District Admin - Handle Escalations
+
+1. Login as District Admin using this credentials
+
+```bash
+`Email`:email organization admin asssigned to you
+`Password`:ChangeMe123!
+```
+2. add sectors where organization operates
+3. View escalated complaints
+4. Respond, resolve, or escalate to organization
+5. View district-level dashboard stats
+
+
+###  Use Case 4: Sector Admin - Handle Local Complaints
+
+1. Login as Sector Admin using this credential
+ ```bash
+`Email`:email districtn asssigned to you
+`Password`:ChangeMe123!
+```
+2. View complaints in dashboard
+3. Update status, add comment, or escalate to district
+4. Upload optional attachments (not implememted yet)
+5. every changes visible to citizen
+
+
+###  Use Case 5: Citizen - Submit & Track Complaint
 
 1. Register a new citizen account  and password.
 2. Login and click "New complaint" button page.
@@ -246,35 +298,7 @@ This section outlines key use cases to help testers verify the core functionalit
 7. Confirm resolution or escalate if needed
 
 
-###  Use Case 2: Sector Admin - Handle Local Complaints
-
-1. Login as Sector Admin
-2. View complaints in dashboard
-3. Update status, add comment, or escalate to district
-4. Upload optional attachments (not implememted yet)
-5. every changes visible to citizen
-
-
-
-###  Use Case 3: District Admin - Handle Escalations
-
-1. Login as District Admin
-2. View escalated complaints
-3. Respond, resolve, or escalate to organization
-4. View district-level dashboard stats
-
-
-
-###  Use Case 4: Organization Admin - Final Resolution
-
-1. Login as Org Admin
-2. Resolve org-level complaints
-3. Finalize decisions
-4. View org-wide analytics
-
-
-
-### Use Case 5: Forgot Password
+### Use Case 6: Forgot Password
 
 1. Click "Forgot Password" on login page
 2. Submit email
