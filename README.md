@@ -116,8 +116,9 @@ Citizen confirms resolution or escalate if not satisified
 | Documentation & UX                       | Clean UI + Markdown docs |
 | Responsiveness
 | api versioning                           
-| wnvironment variables for security       
-
+| environment variables for security 
+|  performance                             | implimented ACID principles to request with morethan one databse operation (update,delete and create)  
+| CORS orgin for securing API
 
 
 ##  Tech Stack
@@ -139,7 +140,7 @@ Citizen confirms resolution or escalate if not satisified
 ## Backend
 
    ### Prerequisites
-      - Node.js (v14 or higher)
+      - Node.js 
       - MongoDB
       - npm or yarn package manager
 
@@ -172,6 +173,7 @@ Required environment variables are documented in `.env.example`. Key variables i
 - `CLOUDINARY_API_KEY`= cloudinary cloud api key
 - `CLOUDINARY_API_SECRET`= cloudinary spi secret
 - `NODE_ENV` = node environment
+- `FRONT-END_URL` = to use in password reset and Cross orgin 
 - `SMTP_FROM_NAM` = name of sender
 - `SMTP_FROM_EMAIL` = sender email
 - `PORT` = server port
@@ -313,6 +315,15 @@ This section outlines key use cases to help testers verify the core functionalit
 1. Submit complaint as citizen
 2. Add comment/status as admin
 3. Verify notification received
+
+
+### Planned production deployment 
+
+ - realtime database backup with mongodb replicaSet
+ - npm audit for  finding ourdated packages
+ - logging error and monitoring server health
+ - DevOps for testing and deployment
+ - caching and load balance to handle server slowdowns
 
 
 ## NB:
