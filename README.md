@@ -319,3 +319,5 @@ This section outlines key use cases to help testers verify the core functionalit
   - due hosting on free plan of render it may slowdown the backend operation to 50s as render says
   - responsiveness on mobile phone is not implemented well on all pages so better Test on Computer
   - some pages containing dummy datas for display reasons especialy on dashboard pages 
+  - for citizen registration please choos kigali -  gasabo district becaouse is the one with its repective sectors so far
+ 
