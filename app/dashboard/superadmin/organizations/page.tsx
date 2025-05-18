@@ -87,8 +87,7 @@ export default function OrganizationsPage() {
   const filteredOrganizations = organizations.filter(
     (org) =>
       org.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      org.services.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      org.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      org.location?.toLowerCase().includes(searchQuery.toLowerCase()) ||
       org.email.toLowerCase().includes(searchQuery.toLowerCase()),
   )
   useEffect(()=>{
