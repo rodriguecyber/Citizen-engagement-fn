@@ -11,12 +11,14 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import axios from "axios"
 import { API_URL } from "@/lib/api"
+import { useToast } from "@/hooks/use-toast"
 
 export default function Login() {
   const router = useRouter()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const {toast} = useToast()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -26,11 +28,14 @@ export default function Login() {
       const response = await axios.post(`${API_URL}/auth/login`,{ email, password}, {
         headers: { 'Content-Type': 'application/json' },
       });
- ``
+      toast({
+        title: "Login success",
+        description: "redirecting",
+        variant: "default",
+      })
       const data = await response.data;
       localStorage.setItem('token',data.token)
       setTimeout(() => {
-        // Navigate based on user type
         switch (data.user.role) {
           case "superadmin":
             router.push("/dashboard/superadmin")
@@ -50,6 +55,11 @@ export default function Login() {
         setIsLoading(false)
       }, 1000)
     } catch (error) {
+      toast({
+        title: "Login Filed",
+        description: (error as Error).message||'invalid credentilas',
+        variant: "destructive",
+      })
       console.error("Login error:", error)
       setIsLoading(false)
     }

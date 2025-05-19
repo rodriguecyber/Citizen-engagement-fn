@@ -1,11 +1,14 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { LayoutDashboard, Building2, Users, MapPin, FileText, Settings, LogOut, Menu, X, Bell } from "lucide-react"
+import axios from "axios"
+import { API_URL } from "@/lib/api"
+import { IUser } from "@/lib/types/user"
 
 type SidebarProps = {
   userType: "superadmin" | "orgadmin" | "districtadmin" | "sectoradmin" | "citizen"
@@ -14,6 +17,7 @@ type SidebarProps = {
 export function Sidebar({ userType }: SidebarProps) {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
+ 
 
   // Define navigation items based on user type
   const getNavigationItems = () => {
